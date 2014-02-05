@@ -10,7 +10,7 @@ classdef SR830
         function [obj] = SR830(n,autorange)
             
             if ~exist('n','var')
-                n='SR830A';
+                n=8;
             end
             
             if ~exist('autorange','var')
@@ -18,7 +18,7 @@ classdef SR830
             end
             
             %fprintf('Using name = %s\n',n);
-            obj.dev = lgpib(n);
+            obj.dev = lgpib_win(n);
             obj.autorange = autorange;
             obj.dev.interface_clear();
             pause(0.1);
